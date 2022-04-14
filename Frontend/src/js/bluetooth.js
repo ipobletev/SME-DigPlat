@@ -1,0 +1,1 @@
+navigator.bluetooth.requestDevice({filters:[{namePrefix:'LE'}]}).then(device => console.log(device))
