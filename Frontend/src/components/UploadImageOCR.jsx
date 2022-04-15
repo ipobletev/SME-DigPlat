@@ -13,6 +13,19 @@ window.addEventListener("paste", e => {
   }
 })
 
+window.addEventListener("change", i => {
+  console.log(i.target.files[0]);
+  if (i.target.files.length > 0) {
+    const fileInput = document.querySelector("#myFile");
+    
+    fileInput.files = i.target.files;
+    
+    if (i.target.files[0].type.startsWith("image/")) {
+      setPreviwImage(i.target.files[0]);
+    }
+  }
+})
+
 function setPreviwImage(file) {
   const fileReader = new FileReader();
   
