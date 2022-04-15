@@ -1,22 +1,28 @@
-import React from "react";
-import Tesseract from 'tesseract.js';
+import React, { useEffect, useState } from 'react';
+import { createWorker } from 'tesseract.js';
 
-const teseracto = () => {
-  Tesseract.recognize(
-    'https://tesseract.projectnaptha.com/img/eng_bw.png',
-    'eng',
-    { logger: m => console.log(m) }
-  ).then(({ data: { text } }) => {
-    console.log(text);
-  })
-}
 
-const OCRtesseract = () => {
+function OCRtesseract() {
+  const worker = createWorker({
+    logger: m => console.log(m),
+  });
+  const doOCR = async () => {
+    await worker.load();
+    await worker.loadLanguage('eng');
+    await worker.initialize('eng');
+    //const { data: { text } } = await worker.recognize('https://tesseract.projectnaptha.com/img/eng_bw.png');
+    const { data: { text } } = await worker.recognize('https://upload.wikimedia.org/wikipedia/commons/4/4c/Texto_I_de_Gil_%281799%29.png');
+    
+    setOcr(text);
+  };
+  const [ocr, setOcr] = useState('Recognizing...'); 
+  useEffect(() => {
+    doOCR();
+  });
   return (
-    <ul>
-      1
-        <button className="OCRtesseract" onClick={teseracto} >Conectar no se</button>
-    </ul>    
+    <div className="OCRtesseract">
+      <p>{ocr}</p>
+    </div>
   );
 }
 
