@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model version="5.1.1" links="0">
+ <framework name="qpn"/>
+ <package name="HSMs" stereotype="0x02">
+  <class name="Class1" superclass="qpn::QHsm">
+   <statechart properties="0x00">
+    <state_diagram size="133,84"/>
+   </statechart>
+  </class>
+  <directory name="../src">
+   <file name="StateMachine.cpp">
+    <text>#ifndef StateMachine_H
+#define StateMachine_H
+
+#endif
+
+</text>
+   </file>
+   <file name="StateMachine.h"/>
+  </directory>
+ </package>
+</model>
