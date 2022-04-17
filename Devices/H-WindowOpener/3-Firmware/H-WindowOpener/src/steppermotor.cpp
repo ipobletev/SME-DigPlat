@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 #include <Stepper.h>
-#include <SME_steppermotor.h>
+#include <steppermotor.h>
 
 const int stepsPerRevolution = STEP_REVOLUTION;  // change this to fit the number of steps per revolution
 

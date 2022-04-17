@@ -1,7 +1,7 @@
 
 
 #include <Arduino.h>
-#include <SME_hallsensor.h>
+#include <hallsensor.h>
 
 int Val1=0,Val2=0;             //Here you can store both values, the Val2 can be boolean
 

@@ -1,6 +1,6 @@
 
-#ifndef SME_HALLSENSOR_H
-#define SME_HALLSENSOR_H
+#ifndef HALLSENSOR_H
+#define HALLSENSOR_H
 
 
 #define Hall_Sensor A0          //A0 used with analog output, D2 with digital output
